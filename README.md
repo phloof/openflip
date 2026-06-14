@@ -11,13 +11,20 @@ Open source mechanical switch actuator built with ESP32 and a servo motor, with 
 
 ## Config
 
-Before flashing, choose your switch behavior inside the code (`constexpr SwitchMode SWITCH_MODE`):
+You can customise the behavior, physical limits, and hardware parameters of your switch presser by modifying the constants at the top of the code.
 
-| Mode | Behavior | Ideal For |
+| Configuration Constant | Default Value | Description / Purpose |
 | :--- | :--- | :--- |
-| `MODE_DIRECT` | Servo sweeps to `POS_ON` / `POS_OFF` and holds position. | Rocker switches, latching push buttons. |
-| `MODE_TOGGLE` | Servo nudges to `POS_ON` and returns to `POS_REST` immediately. | Momentary buttons, toggle/flip switches. |
-
+| **`SWITCH_MODE`** | `MODE_TOGGLE` | **`MODE_DIRECT`**: Servo holds position (rocker switches). <br>**`MODE_TOGGLE`**: Servo presses & releases instantly (momentary buttons). |
+| **`POS_OFF`** | `15` (degrees) | Physical angle when the switch is turned **OFF** (Direct mode). |
+| **`POS_ON`** | `35` (degrees) | Physical angle when pressing the switch **ON** (Both modes). |
+| **`POS_REST`** | `15` (degrees) | Neutral parked position where the servo rests when idle (Toggle mode). |
+| **`SWEEP_MS`** | `20` (ms) | Time delay per degree of rotation. Higher values smooth the sweep and reduce current spikes. |
+| **`PRESS_HOLD_MS`** | `150` (ms) | How long the servo pauses at full press (`POS_ON`) before releasing (Toggle mode). |
+| **`SERVO_SETTLE`** | `100` (ms) | Buffer time allowed for the servo to reach its destination before turning off PWM. |
+| **`LED_PIN`** | `48` | GPIO pin connected to the built-in WS2812 RGB LED. |
+| **`SERVO_PIN`** | `4` | GPIO pin outputting the PWM signal to the servo motor signal wire. |
+| **`RESET_HOLD_MS`** | `5000` (ms) | Duration the BOOT button must be held down to trigger a factory reset. |
 ---
 
 ## LED Status Reference
