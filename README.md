@@ -32,7 +32,7 @@ You can customise the behavior, physical limits, and hardware parameters of your
 * **Blinking Blue:** Ready to pair (Commissioning mode)
 * **Solid Red:** Switch is **OFF**
 * **Solid Green:** Switch is **ON**
-* **Off (Black):** Servo is currently moving (minimizes power spikes)
+* **Off (Black):** Servo is currently moving (minimises power spikes)
 * **Purple Flash:** Factory reset triggered
 
 ---
