@@ -47,3 +47,19 @@ Before flashing, choose your switch behavior inside the code (`constexpr SwitchM
 
 * **Manual Press:** Give the **BOOT** button a single short press to manually toggle the switch state.
 * **Factory Reset:** Hold the **BOOT** button for **$\ge$ 5 seconds**. The LED will flash purple, clear all Matter pairing credentials, and reboot back into setup mode.
+
+---
+
+## Future Changes
+
+* **Expanded Hardware Compatibility:** Add support for non-BLE (Bluetooth Low Energy) microcontrollers and development boards.
+* **Advanced Power Optimisation:**
+  * Implement **Modem Sleep** to significantly reduce Wi-Fi power consumption during idle periods.
+  * Dynamically lower **CPU Frequency** to conserve battery life.
+  * Add a feature to turn the **Idle LED Completely Off** instead of keeping it red or green, eliminating phantom power draw.
+
+---
+
+## License
+
+This project is licensed under the **GNU General Public License v3.0 (GPLv3)**. See the official GNU documentation for details.
